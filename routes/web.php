@@ -16,3 +16,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('dashboard', [AuthController::class, 'dashboard'])->middleware(['auth', 'verify_email']);
+Route::get('account/verify/{token}', [AuthController::class, 'verifyAccount'])->name('user.verify');

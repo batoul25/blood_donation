@@ -5,9 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class blood extends Model
+class UserVerfiy extends Model
 {
     use HasFactory;
-    protected $fillable = ['blood_type'];
-
+    protected $fillable = [
+        'user_id',
+        'token'
+    ];
 }

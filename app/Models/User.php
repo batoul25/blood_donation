@@ -21,6 +21,10 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'email_verified_at',
+        'location',
+        'contact',
+        'blood_type_id'
     ];
 
     /**

@@ -17,15 +17,15 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
-            $table->string('contact');
-            $table->string('location');
+            $table->string('contact')->nullable();
+            $table->string('location')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
 
 
             $table->rememberToken();
             $table->timestamps();
-            $table->foreignId('blood_type_id');
+            $table->foreignId('blood_type_id')->default(2);
 
         });
     }
